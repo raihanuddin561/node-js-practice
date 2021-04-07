@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { check, validationResult } = require('express-validator/check');
+const { check, validationResult } = require('express-validator');
 const User = require('../../models/User');
 const bicrypt = require('bcryptjs')
 const gravatar = require('gravatar')
@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken')
 const config = require('config')
 router.post('/',[
     check('name','Name is required').not().isEmpty(),
-    check('email','Please include dvalid imail').isEmail(),
+    check('email','Please include valid imail').isEmail(),
     check('password',"Password should be minimum 6 chars").isLength({min:6})    
 ],async (req,res)=>{
     const errors = validationResult(req)
