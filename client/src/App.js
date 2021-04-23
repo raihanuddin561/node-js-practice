@@ -5,10 +5,14 @@ import Landing from './components/layouts/Landing'
 import Navbar from './components/layouts/Navbar'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
+//redux
+import {Provider} from 'react-redux'
+import store from './store'
 import {BrowserRouter as Router,Route,Switch,Swithc} from 'react-router-dom'
 function App() {
   return (
-   <Router>
+  <Provider store={store}>
+     <Router>
      <Fragment>
      <Navbar/>
      <Route exact path='/' component={Landing}/>
@@ -20,6 +24,7 @@ function App() {
      </Switch>
    </Fragment>
    </Router>
+  </Provider>
   );
 }
 
