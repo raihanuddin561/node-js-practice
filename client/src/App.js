@@ -8,15 +8,19 @@ import Register from './components/auth/Register'
 //redux
 import {Provider} from 'react-redux'
 import store from './store'
-import {BrowserRouter as Router,Route,Switch,Switch} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import Alert from './components/layouts/Alert';
 function App() {
   return (
   <Provider store={store}>
      <Router>
      <Fragment>
      <Navbar/>
+     
      <Route exact path='/' component={Landing}/>
+     <Alert/>
      <Switch>
+     
        <div className="container">
        <Route exact path='/login' component={Login}/>
        <Route exact path='/register' component={Register}/>
