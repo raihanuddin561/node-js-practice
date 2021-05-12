@@ -15,17 +15,15 @@ function App() {
   <Provider store={store}>
      <Router>
      <Fragment>
-     <Navbar/>
-     
+     <Navbar/> 
      <Route exact path='/' component={Landing}/>
-     <Alert/>
+    <section className="container">
+    <Alert />
      <Switch>
-     
-       <div className="container">
        <Route exact path='/login' component={Login}/>
        <Route exact path='/register' component={Register}/>
-       </div>
      </Switch>
+    </section>
    </Fragment>
    </Router>
   </Provider>
